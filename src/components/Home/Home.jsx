@@ -1,17 +1,9 @@
 import { Searchbar } from "components/Searchbar/Searchbar"
-import { NavLink } from "react-router-dom"
-export const Home = () => {
+
+export const Home = ({ onSubmit }) => {
     return (
-
         <header >
-            {/* <nav>
-                <NavLink to="/movies/:movieId">
-                    <div><p>co</p></div>
-                </NavLink>
-            </nav>
-            <div><p>co</p></div> */}
-            <Searchbar ></Searchbar>
-
+            <Searchbar onSubmit={onSubmit} ></Searchbar>
         </header>
     )
 
