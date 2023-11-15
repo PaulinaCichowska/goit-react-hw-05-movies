@@ -1,9 +1,10 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Home } from './Home/Home'
 import { MovieDetails } from "./MovieDetails/MovieDetails";
 import { Cast } from './Cast/Cast'
 import { Movies } from "./Movies/Movies";
 import { Reviews } from "./Reviews/Reviews";
+import { Navigation } from "./Navigation/Navigation";
 import { useState, useEffect } from "react";
 
 export const App = () => {
@@ -18,7 +19,7 @@ export const App = () => {
 
 
     const API_KEY = 'a6dea57c1aa25342be7364b15df895c0'
-    const URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=` + API_KEY
+    const URL = `https://api.themoviedb.org/3/${term}?api_key=` + API_KEY
     try {
       const response = await fetch(URL);
       const json = await response.json();
@@ -39,9 +40,11 @@ export const App = () => {
       setIsLoading(false)
     }
   }
+
   const getFilteredData = () => {
     return data.filter(film => film.title.toLowerCase().indexOf(term) !== -1)
   }
+
   useEffect(() => {
     const prev = page - 1;
     if (prev !== page) {
@@ -64,10 +67,10 @@ export const App = () => {
 
   }
 
-  const loadMore = () => {
-    setPage(page + 1)
+  // const loadMore = () => {
+  //   setPage(page + 1)
 
-  }
+  // }
 
 
   // const Click = (e) => {
@@ -76,15 +79,18 @@ export const App = () => {
   // }
 
   return (
-    <BrowserRouter>
+    <div>
       <Routes>
-        <Route path="/" element={<Home onSubmit={onFormSubmit} />}>
+        <Route path="/" element={<Navigation />} >
+          <Route index element={<Home onSubmit={onFormSubmit} data={data} />} />
           <Route path="/movies" element={<Movies data={data} />} />
-          <Route path="/movies/:movieId" element={<MovieDetails />} />
-          <Route path="/movies/:movieId/cast" element={<Cast />} />
-          <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<Home />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 };

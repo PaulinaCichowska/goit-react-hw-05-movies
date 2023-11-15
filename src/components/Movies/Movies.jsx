@@ -6,8 +6,8 @@ import { MoviesItem } from 'components/MoviesItem/MoviesItem';
 export const Movies = ({ data }) => (
     <div className={css.container}>
         <ul className={css.list}>
-            {data.map((f) => (
-                <MoviesItem data={f} />
+            {data.map((film) => (
+                <MoviesItem data={film} key={film.id} />
             ))}
         </ul>
     </div>
