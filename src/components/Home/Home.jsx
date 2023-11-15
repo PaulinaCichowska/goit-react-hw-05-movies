@@ -1,12 +1,14 @@
 import { Searchbar } from "components/Searchbar/Searchbar"
 import { Movies } from '../Movies/Movies'
-export const Home = ({ onSubmit, data }) => {
+import { fetchTrendingData } from 'api/fetchTrendingData.js'
+export const Home = ({ onSubmit, }) => {
+
     return (<>
         <header >
             <Searchbar onSubmit={onSubmit} ></Searchbar>
         </header>
         <div>
-            <Movies data={data} ></Movies>
+            <Movies data={fetchTrendingData()} ></Movies>
         </div>
     </>
     )

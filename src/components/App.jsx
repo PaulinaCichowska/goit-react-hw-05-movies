@@ -7,12 +7,13 @@ import { Reviews } from "./Reviews/Reviews";
 import { Navigation } from "./Navigation/Navigation";
 import { useState, useEffect } from "react";
 
+
 export const App = () => {
+
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [term, setTerm] = useState('');
   const [page, setPage] = useState(1);
-
 
   const fetchData = async (search) => {
     setIsLoading(true)
