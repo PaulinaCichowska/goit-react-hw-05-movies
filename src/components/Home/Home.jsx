@@ -2,7 +2,7 @@ import { Searchbar } from "components/Searchbar/Searchbar"
 import { Movies } from '../Movies/Movies'
 import { useEffect, useState, } from "react";
 import { fetchTrendingData } from "api/fetchTrendingData";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSearchContext } from "components/Context/searchContext";
 
 export const Home = () => {
@@ -11,6 +11,8 @@ export const Home = () => {
     const { search, changeSearchValue } = useSearchContext();
 
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
 
     const fetchMovies = async () => {
         const data = await fetchTrendingData();

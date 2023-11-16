@@ -7,6 +7,6 @@ export const fetchDataDetails = async (filmId) => {
 
     const response = await axios.get(URL);
     const data = await response.data;
-
+    console.log(data)
     return data
 }

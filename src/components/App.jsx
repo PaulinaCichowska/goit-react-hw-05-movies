@@ -10,6 +10,7 @@ import { MoviesPage } from "./MoviesPage/MoviesPage";
 import { fetchDataByQuery } from "api/fetchDataByQuery";
 import { ErrorBoundary } from "react-error-boundary";
 import { useSearchContext } from "./Context/searchContext";
+import { fetchDataDetails } from "api/fetchDataDetails";
 
 
 export const App = () => {
@@ -20,55 +21,6 @@ export const App = () => {
   const [page, setPage] = useState(1);
   // const { searchValue, changeSearchValue } = useSearchValue();
   const { search, changeSearchValue } = useSearchContext();
-
-
-  // const fetchMoviesByQuery = async () => {
-  //   const data = await fetchDataByQuery(search);
-  //   setData([...data]);
-
-  // }
-
-  // useEffect(() => {
-  //   fetchMoviesByQuery()
-  // }, [search])
-
-
-
-
-
-  // const getFilteredData = () => {
-  //   return data.filter(film => film.title.toLowerCase().indexOf(term) !== -1)
-  // }
-
-  // useEffect(() => {
-  //   const prev = page - 1;
-  //   if (prev !== page) {
-  //     fetchData(term);
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [page]);
-
-
-  // useEffect(() => {
-
-  //   setTrendingData([...fetchTrendingData()])
-  // })
-
-
-
-  // }
-
-  // const loadMore = () => {
-  //   setPage(page + 1)
-
-  // }
-
-
-  // const Click = (e) => {
-  //   fetchData(term)
-  //   e.preventDefault();
-  // }
-
 
   return (
     <div>
