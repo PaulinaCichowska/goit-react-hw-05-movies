@@ -1,23 +1,25 @@
 
 import { useEffect, useState } from "react";
 import { fetchDataDetails } from "api/fetchDataDetails";
-import { useNavigate, Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useNavigate, Link, useParams, Outlet, useLocation } from "react-router-dom";
+import { } from "react-router-dom";
 import { useSearchContext } from "components/Context/searchContext";
 
 
 export const MovieDetails = () => {
-    const location = useLocation();
     const [data, setData] = useState([]);
     const [term, setTerm] = useState('');
     const { search, changeSearchValue, id, changeId } = useSearchContext();
+    const { filmId } = useParams();
 
+    const location = useLocation();
+    // console.log(location)
     const navigate = useNavigate();
 
     const fetchMovies = async (id) => {
         const data = await fetchDataDetails(id);
         setData({ ...data });
-        console.log(data)
+        // console.log(data)
 
     }
 
@@ -30,8 +32,10 @@ export const MovieDetails = () => {
         <>
             <div>
                 <Link to={backLinkHref} >go back</Link>
-                <p> strona</p>
+                <p>{filmId} strona</p>
+                <Outlet />
             </div>
+
         </>
     )
 }

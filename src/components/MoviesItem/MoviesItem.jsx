@@ -14,7 +14,7 @@ export const MoviesItem = ({ data }) => {
         console.log(e.currentTarget.id)
         const newId = e.currentTarget.id
         changeId(newId)
-        navigate("/movies/:movieId")
+        navigate(`/movies/:${newId}`)
     }
 
     return (
