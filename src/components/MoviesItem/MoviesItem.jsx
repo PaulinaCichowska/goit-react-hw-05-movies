@@ -6,13 +6,14 @@ const posterPath = 'https://image.tmdb.org/t/p/original/'
 
 
 export const MoviesItem = ({ data }) => {
-    const { search, changeSearchValue, id, setId } = useSearchContext();
+    const { search, changeSearchValue, id, changeId } = useSearchContext();
 
     const navigate = useNavigate();
     const Click = (e) => {
 
         console.log(e.currentTarget.id)
-        setId(id)
+        const newId = e.currentTarget.id
+        changeId(newId)
         navigate("/movies/:movieId")
     }
 

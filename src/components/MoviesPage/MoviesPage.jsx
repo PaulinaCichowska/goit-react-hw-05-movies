@@ -10,14 +10,14 @@ export const MoviesPage = () => {
     const [data, setData] = useState([]);
     const { search, changeSearchValue } = useSearchContext();
 
-    const fetchMoviesByQuery = async () => {
+    const fetchMoviesByQuery = async (search) => {
         const data = await fetchDataByQuery(search);
         setData([...data]);
 
     }
 
     useEffect(() => {
-        fetchMoviesByQuery()
+        fetchMoviesByQuery(search)
     }, [search])
 
 
@@ -28,7 +28,7 @@ export const MoviesPage = () => {
         form.reset();
         if (term !== search && search !== "") {
             changeSearchValue(search)
-            setTerm(search)
+            // setTerm(search)
         }
     }
 
