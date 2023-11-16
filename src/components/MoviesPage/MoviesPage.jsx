@@ -1,26 +1,25 @@
 import { Searchbar } from "components/Searchbar/Searchbar"
 import { Movies } from '../Movies/Movies'
 import { useEffect, useState, } from "react";
-import { fetchTrendingData } from "api/fetchTrendingData";
-import { useNavigate } from "react-router-dom";
+import { fetchDataByQuery } from "api/fetchDataByQuery";
 import { useSearchContext } from "components/Context/searchContext";
 
-export const Home = () => {
-    const [trendingData, setTrendingData] = useState([]);
+export const MoviesPage = () => {
+
     const [term, setTerm] = useState('');
+    const [data, setData] = useState([]);
     const { search, changeSearchValue } = useSearchContext();
 
-    const navigate = useNavigate();
-
-    const fetchMovies = async () => {
-        const data = await fetchTrendingData();
-        setTrendingData([...data]);
+    const fetchMoviesByQuery = async () => {
+        const data = await fetchDataByQuery(search);
+        setData([...data]);
 
     }
 
     useEffect(() => {
-        fetchMovies()
-    }, [])
+        fetchMoviesByQuery()
+    }, [search])
+
 
     const onFormSubmit = (e) => {
         const form = e.currentTarget;
@@ -29,18 +28,19 @@ export const Home = () => {
         form.reset();
         if (term !== search && search !== "") {
             changeSearchValue(search)
-            navigate("/movies", { replace: true })
+            setTerm(search)
         }
     }
+
+
     return (
         <>
             <header >
                 <Searchbar onSubmit={onFormSubmit} ></Searchbar>
             </header>
             <div>
-                <Movies data={trendingData} ></Movies>
+                <Movies data={data} ></Movies>
             </div>
         </>
     )
-
 }
