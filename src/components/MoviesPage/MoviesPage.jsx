@@ -3,6 +3,7 @@ import { Movies } from '../Movies/Movies'
 import { useEffect, useState, } from "react";
 import { fetchDataByQuery } from "api/fetchDataByQuery";
 import { useSearchContext } from "components/Context/searchContext";
+import css from './MoviePage.module.css'
 
 export const MoviesPage = () => {
 

@@ -1,8 +1,14 @@
 @import-normalize;
 
 /* bring in normalize.css styles */
+:root {
+  --color: rgb(155, 9, 33);
+}
+
 * {
   outline: none;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,7 +18,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffd8d8;
+  background-color: #27282c;
 }
 
 code {

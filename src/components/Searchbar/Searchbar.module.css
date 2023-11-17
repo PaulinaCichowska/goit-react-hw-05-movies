@@ -19,10 +19,9 @@
 }
 
 .cover {
-    margin-top: 30px;
+    margin: 0 auto;
     width: 550px;
     padding: 35px;
-    margin: -83px auto 0 auto;
     background-color: #ff7575;
     border-radius: 20px;
     box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
@@ -30,7 +29,7 @@
 }
 
 .form {
-    height: 96px;
+    height: 86px;
 }
 
 .input[type="text"] {
@@ -61,11 +60,11 @@
     position: relative;
     top: -10px;
     left: 0;
-    width: 20px;
+    width: 10px;
     height: 35px;
     margin-top: 0;
     border-width: 15px;
-    border: 15px solid #fff;
+    border: 10px solid #fff;
     background-color: transparent;
     border-radius: 50%;
     transition: 0.5s ease all;
@@ -76,7 +75,7 @@
     top: 68px;
     left: 43px;
     display: block;
-    width: 45px;
+    width: 35px;
     height: 15px;
     background-color: transparent;
     border-radius: 10px;
