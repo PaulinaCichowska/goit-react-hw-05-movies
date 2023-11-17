@@ -13,7 +13,6 @@ export const fetchDataByQuery = async (search) => {
     const response = await axios.get(`${URL}?${searchParams}`);
     const data = await response.data;
     const results = await data.results;
-    console.log(results)
 
     return results
 }
