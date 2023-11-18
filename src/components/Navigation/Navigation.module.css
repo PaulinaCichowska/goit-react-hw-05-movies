@@ -1,29 +1,16 @@
 @import "/src/index.css";
 
-
-
-/* .navLink {
-    text-decoration: none;
-    background-color: rgba(217, 102, 160, 0.571);
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    align-content: center
-} */
-
-
 .nav {
     display: flex;
     gap: 30px;
     justify-content: center;
-    width: 100%;
-    min-height: 100vh;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 120px;
-    background: #27282c;
+    ;
 }
 
 .navLink {

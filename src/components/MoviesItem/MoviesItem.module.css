@@ -1,4 +1,38 @@
+@import "/src/index.css";
+
 .img {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
+    border-radius: 0 0 5% 5%;
+
+}
+
+.title {
+    padding: 30px;
+    font-size: 16x;
+    text-align: center;
+    font-family: Nunito;
+    color: aliceblue;
+    margin: 0;
+}
+
+.title:hover {
+    font-size: 18px;
+}
+
+.listItem {
+    width: 250px;
+    cursor: pointer;
+    border: rgba(155, 9, 33, 0.769) solid 2px;
+    border-radius: 5%;
+    background-color: var(--color);
+    box-shadow: 0 0 10px var(--color),
+        0 0 20px var(--color),
+        0 0 30px var(--color);
+}
+
+.listItem:hover {
+    box-shadow: 0 0 10px var(--color),
+        0 0 10px var(--color),
+        0 0 10px var(--color);
 }

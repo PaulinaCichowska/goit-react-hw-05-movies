@@ -1,0 +1,31 @@
+.link,
+.cast,
+.reviews {
+    padding: 15px 30px;
+    background-color: var(--color);
+    border-radius: 20px;
+    box-shadow: 0 0 10px var(--color),
+        0 0 30px var(--color),
+        0 0 40px var(--color);
+    transform: scale(0.6);
+    text-decoration: none;
+    color: aliceblue;
+    font-family: Nunito;
+}
+
+.link:hover {
+    box-shadow: 0 0 10px var(--color),
+        0 0 20px var(--color),
+        0 0 30px var(--color);
+    padding: 18px 32px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.cast,
+.reviews {
+    font-size: 40px;
+}

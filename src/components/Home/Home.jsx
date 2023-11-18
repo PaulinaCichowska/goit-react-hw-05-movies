@@ -6,20 +6,15 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useSearchContext } from "components/Context/searchContext";
 
 export const Home = () => {
-    const [searchParams, setSearchParams] = useSearchParams()
     const [trendingData, setTrendingData] = useState([]);
-
     const { search, changeSearchValue } = useSearchContext();
 
     const navigate = useNavigate();
 
-
     const fetchMovies = async () => {
         const data = await fetchTrendingData();
         setTrendingData([...data]);
-
     }
-
 
     useEffect(() => {
         fetchMovies()

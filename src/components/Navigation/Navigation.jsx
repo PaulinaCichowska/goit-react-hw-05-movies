@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom"
 import css from './Navigation.module.css'
+
 export const Navigation = () => (
     <div>
         <nav className={css.nav} >

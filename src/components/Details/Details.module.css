@@ -1,0 +1,50 @@
+.container {
+    text-align: center;
+    color: aliceblue;
+    margin-top: 60px;
+    margin-right: 40px;
+    background-color: rgba(0, 0, 0, 0.404);
+    font-family: Nunito;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 9%;
+    margin-bottom: 10px;
+}
+
+.flex {
+    display: flex;
+    display: row;
+    gap: 40px;
+}
+
+.genere {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h2 {
+    padding: 0;
+    font-size: 30px;
+    max-width: 300px;
+    text-shadow: rgb(155, 9, 33) 0px 0px 20px, rgb(155, 9, 33) 0px 0px 30px, rgb(155, 9, 33) 0px 0px 40px, rgb(155, 9, 33) 0px 0px 50px, rgb(155, 9, 33) 0px 0px 75px, 2px 2px 2px rgb(155, 9, 33);
+}
+
+.rate {
+    font-size: 12px;
+    text-shadow: none;
+    color: goldenrod;
+}
+
+.overview {
+    max-width: 500px;
+    margin-bottom: 50px;
+}
+
+.img {
+    width: 400px;
+    height: 400px;
+    border-radius: 3%;
+}

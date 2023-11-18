@@ -1,3 +1,6 @@
+@import "/src/index.css";
+
+
 .tb {
     display: table;
     width: 100%;
@@ -22,9 +25,11 @@
     margin: 0 auto;
     width: 550px;
     padding: 35px;
-    background-color: #ff7575;
+    background-color: var(--color);
     border-radius: 20px;
-    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
+    box-shadow: 0 0 10px var(--color),
+        0 0 30px var(--color),
+        0 0 60px var(--color);
     transform: scale(0.6);
 }
 
@@ -40,13 +45,9 @@
 }
 
 .input[type="text"]::placeholder {
-    color: #e16868;
+    color: #130202;
 }
 
-.sCircle {
-    width: 1px;
-    padding-left: 35px;
-}
 
 .button {
     position: relative;
@@ -57,6 +58,8 @@
 }
 
 .sCircle {
+    padding-left: 35px;
+    z-index: 2;
     position: relative;
     top: -10px;
     left: 0;
@@ -68,6 +71,9 @@
     background-color: transparent;
     border-radius: 50%;
     transition: 0.5s ease all;
+    box-shadow: 0 0 10px var(--color),
+        0 0 30px var(--color),
+        0 0 60px var(--color);
 }
 
 .span {
@@ -81,10 +87,15 @@
     border-radius: 10px;
     transform: rotateZ(52deg);
     transition: 0.5s ease all;
+
 }
 
-.button span:before,
-.button span:after {
+.input:focus::placeholder {
+    color: transparent;
+}
+
+.span:before,
+.span:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -95,6 +106,14 @@
     border-radius: 10px;
     transform: rotateZ(0);
     transition: 0.5s ease all;
+    box-shadow: 0 0 10px var(--color),
+        0 0 30px var(--color),
+        0 0 60px var(--color);
+
+}
+
+.cover:hover {
+    background-color: var(--color);
 }
 
 .cover:hover .sCircle {
@@ -112,6 +131,7 @@
     width: 45px;
     margin-top: -9px;
     transform: rotateZ(0);
+    z-index: 3;
 }
 
 .cover:hover .button .span:before {
@@ -122,6 +142,7 @@
 .cover:hover .button .span:after {
     bottom: -11px;
     transform: rotateZ(-52deg);
+
 }
 
 .cover:hover .button .span:before,
@@ -129,4 +150,5 @@
     right: -6px;
     width: 40px;
     background-color: #fff;
+
 }

@@ -1,6 +1,7 @@
 import { fetchDataCast } from "api/fetchDataCast";
 import { useSearchContext } from "components/Context/searchContext";
 import { useState, useEffect } from "react";
+import css from './Cast.module.css'
 
 export const Cast = () => {
     const { id } = useSearchContext();
@@ -16,17 +17,17 @@ export const Cast = () => {
     }, [id])
 
     return (
-        <>
-            {cast && cast.map(person => <li key={person.id}>
+        <><ul className={css.ul}>
+            {cast && cast.map(person => <li className={css.listItem} key={person.id}>
                 <img
                     src={person.profile_path ? `https://image.tmdb.org/t/p/original${person.profile_path}` : 'https://avatars.dicebear.com/api/adventurer-neutral/mail%40ashallendesign.co.uk.svg'}
                     alt={person.name}
-                    width={300}
-                    height={200}
+                    className={css.img}
                 />
-                <h3>{person.name}</h3>
-                <p>Role: {person.character}</p>
+                <h3 className={css.name}>{person.name}</h3>
+                <p className={css.role}>Role: {person.character}</p>
             </li>)}
+        </ul>
         </>
     )
 }

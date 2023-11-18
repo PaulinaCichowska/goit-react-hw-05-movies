@@ -4,6 +4,7 @@ import { fetchDataDetails } from "api/fetchDataDetails";
 import { Link, Outlet } from "react-router-dom";
 import { useSearchContext } from "components/Context/searchContext";
 import { Details } from "components/Details/Details";
+import css from './MovieDetails.module.css'
 
 export const MovieDetails = () => {
     const [data, setData] = useState(null);
@@ -16,18 +17,18 @@ export const MovieDetails = () => {
 
     useEffect(() => {
         fetchMovies(id)
-    }, [])
+    }, [id])
 
     return (
         <div>
-            <Link to={"/movies"} >go back</Link >
+            <Link to={"/movies"} className={css.link}>GO BACK</Link >
             {data && <Details data={data} />}
-            <div>
-                <Link
+            <div className={css.buttons}>
+                <Link className={css.cast}
                     to="cast">
                     Cast
                 </Link>
-                <Link
+                <Link className={css.reviews}
                     to="reviews">
                     Reviews
                 </Link>

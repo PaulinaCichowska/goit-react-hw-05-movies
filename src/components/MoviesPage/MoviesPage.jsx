@@ -3,10 +3,9 @@ import { Movies } from '../Movies/Movies'
 import { useEffect, useState, } from "react";
 import { fetchDataByQuery } from "api/fetchDataByQuery";
 import { useSearchContext } from "components/Context/searchContext";
-import css from './MoviePage.module.css'
+
 
 export const MoviesPage = () => {
-
     const [term, setTerm] = useState('');
     const [data, setData] = useState([]);
     const { search, changeSearchValue } = useSearchContext();
@@ -14,13 +13,11 @@ export const MoviesPage = () => {
     const fetchMoviesByQuery = async (search) => {
         const data = await fetchDataByQuery(search);
         setData([...data]);
-
     }
 
     useEffect(() => {
         fetchMoviesByQuery(search)
     }, [search])
-
 
     const onFormSubmit = (e) => {
         const form = e.currentTarget;
@@ -29,10 +26,8 @@ export const MoviesPage = () => {
         form.reset();
         if (term !== search && search !== "") {
             changeSearchValue(search)
-            // setTerm(search)
         }
     }
-
 
     return (
         <>
@@ -42,6 +37,5 @@ export const MoviesPage = () => {
             <div>
                 <Movies data={data} ></Movies>
             </div>
-        </>
-    )
+        </>)
 }
