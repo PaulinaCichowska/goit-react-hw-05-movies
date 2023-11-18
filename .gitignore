@@ -3,7 +3,8 @@
 #Junk
 .vscode/
 .idea/
-
+# api keys
+.env 
 # dependencies
 /node_modules
 /.pnp
