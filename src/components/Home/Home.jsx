@@ -2,7 +2,7 @@ import { Searchbar } from "components/Searchbar/Searchbar"
 import { Movies } from '../Movies/Movies'
 import { useEffect, useState, } from "react";
 import { fetchTrendingData } from "api/fetchTrendingData";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSearchContext } from "components/Context/searchContext";
 
 export const Home = () => {

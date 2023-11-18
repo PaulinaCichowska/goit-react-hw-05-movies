@@ -26,6 +26,7 @@ export const MoviesPage = () => {
         form.reset();
         if (term !== search && search !== "") {
             changeSearchValue(search)
+            setTerm(search)
         }
     }
 
