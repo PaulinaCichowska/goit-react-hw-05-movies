@@ -1,6 +1,5 @@
 @import-normalize;
 
-/* bring in normalize.css styles */
 :root {
   --color: rgb(155, 9, 33);
 }
