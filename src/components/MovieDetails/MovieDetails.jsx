@@ -2,13 +2,15 @@
 import { useEffect, useState } from "react";
 import { fetchDataDetails } from "api/fetchDataDetails";
 import { Link, Outlet } from "react-router-dom";
-import { useSearchContext } from "components/Context/searchContext";
 import { Details } from "components/Details/Details";
 import css from './MovieDetails.module.css'
+import { useParams } from "react-router-dom";
 
 export const MovieDetails = () => {
     const [data, setData] = useState(null);
-    const { id } = useSearchContext();
+
+    const urlParam = useParams();
+    const id = urlParam.movieId;
 
     const fetchMovies = async (id) => {
         const data = await fetchDataDetails(id);
