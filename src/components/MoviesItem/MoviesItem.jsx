@@ -9,7 +9,7 @@ export const MoviesItem = ({ data }) => {
     const Click = (e) => {
         const newId = e.currentTarget.id
         changeId(newId)
-        navigate(`/movies/:${newId}`, { from: "/movies" })
+        navigate(`/movies/${newId}`, { from: "/movies" })
     }
 
     return (
